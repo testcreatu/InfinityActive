@@ -29,6 +29,24 @@
                                 <span class="title">Vendor</span>
                             </a> 
                         </li>
+                        <li class="heading">
+                            <h3 class="uppercase">Branch Section</h3>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/branch')}}" class="nav-link">
+                                <i class="fa fa-code-branch"></i>
+                                <span class="title">Branch</span>
+                            </a> 
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">Model Section</h3>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/model')}}" class="nav-link">
+                                <i class="fa fa-code-branch"></i>
+                                <span class="title">Model</span>
+                            </a> 
+                        </li>
                         
                         
                     </ul>

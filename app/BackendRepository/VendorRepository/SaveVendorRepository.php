@@ -30,11 +30,11 @@ class SaveVendorRepository extends Controller
 
 		$vendor = new User;
 		$vendor->uuid = $this->uuid->generateUuid('users');
-		$vendor->role_id = $request['role'];
-		$vendor->name = $request['name'];
-		$vendor->email = $request['email'];
+		$vendor->role_id = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['role']);
+		$vendor->name = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['name']);
+		$vendor->email = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['email']);
 		$vendor->password = Hash::make($request['password']);
-		$vendor->status = $request['status'];
+		$vendor->status = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['status']);
 
 		$vendor->save();
 
@@ -53,13 +53,13 @@ class SaveVendorRepository extends Controller
 		$this->validate->validateStatus($request);
 
 		
-		$vendor->role_id = $request['role'];
-		$vendor->name = $request['name'];
-		$vendor->email = $request['email'];
+		$vendor->role_id = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['role']);
+		$vendor->name = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['name']);
+		$vendor->email = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['email']);
 		if (!empty($request['password'])) {
 			$vendor->password = Hash::make($request['password']);
 		}
-		$vendor->status = $request['status'];
+		$vendor->status = str_replace(array( '\'', '"', ',' , ';', '<', '>', '!','?','&lt;' ), ' ',$request['status']);
 		$vendor->save();
 	}
 }
