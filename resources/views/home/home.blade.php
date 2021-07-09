@@ -158,7 +158,7 @@
 							<div class="repeater-heading mb-4">
 								<a href="#">
 									<span class="btn btn-primary repeater-add-btn">
-										Add
+										Add Product
 									</span>
 								</a>
 							</div>
