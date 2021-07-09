@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -55,3 +52,11 @@ Route::group(['prefix'=>'admin'], function(){
 });
 
 Route::post('save-product','backend\ProductController@save');
+
+Route::get('new-home', function () {
+    return view('home.home');
+});
+
+Route::get('link', function () {
+    return view('link.link');
+});
