@@ -91,4 +91,24 @@
 
 });
 </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+    $("#genderSelect").change(function () {
+        if($(this).val() == 'men'){
+        $("#gender-view").html('<div class="form-group col-md-12" ><label for="">Mens</label><div class="form-holder"><i class="zmdi zmdi-account-o"></i><select name="product_name" id="" onchange="getval(this);" class="form-control"><option value="Trousers" class="option">Trousers</option><option value="Half Pants" class="option">Half Pants</option><option value="Jackets" class="option">Jackets</option><option value="Others" onselect="myFunction()" class="option">Others</option></select><i class="fas fa-chevron-down"></i></div></div>');}
+        else{
+            $("#gender-view").html('<div class="form-group col-md-12"><label for="">Womens</label><div class="form-holder"><i class="zmdi zmdi-account-o"></i><select name="product_name" id="" onchange="getval(this);" class="form-control"><option value="Sets" class="option">Sets</option><option value="Cpas" class="option">Cpas</option><option value="T-Shirts" class="option">T-Shirts</option><option value="Others" class="option">Others</option></select><i class="fas fa-chevron-down"></i></div></div>');
+        }
+    });
+
+});
+</script>
+
+<script type="text/javascript">
+    function getval(data)
+    {
+        if(data.value == 'Others'){
+        $("#gender-view").html('<div class="form-holder col-md-12 mt-4"><span>If other, type discription of Clothing Type for selected gender</span><input type="text" class="form-control" name="product_other"></div>');}
+    }
+</script>
 </html>

@@ -21,12 +21,6 @@ class CreateVendorProductDetailsTable extends Migration
             $table->string('order_no');
             $table->string('branch');
             $table->string('gender');
-            $table->string('men');
-            $table->string('women');
-            $table->string('model_number');
-            $table->string('size');
-            $table->string('color');
-            $table->string('quantity');
             $table->timestamps();
         });
     }

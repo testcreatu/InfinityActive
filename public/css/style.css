@@ -325,6 +325,17 @@ h5 {
     } 
 }
 
+.repeater-remove-btn {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.repeater-remove-btn:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+
 /*# sourceMappingURL=style.css.map */
 
 
