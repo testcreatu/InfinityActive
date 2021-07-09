@@ -62,12 +62,12 @@
 									<i class="fas fa-chevron-down"></i>
 								</div>
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								
 							</div>
 						</div>
 						<!-- <div class="form-row">
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								<label for="">
 									Mens
 								</label>
@@ -86,7 +86,7 @@
 									<input type="text" class="form-control">
 								</div>
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								<label for="">
 									Womens
 								</label>
@@ -105,7 +105,7 @@
 									<input type="text" class="form-control">
 								</div>
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								<label for="">
 									Model Number
 								</label>
@@ -121,7 +121,7 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								<label for="">
 									Size
 								</label>
@@ -130,7 +130,7 @@
 									<input type="text" class="form-control">
 								</div>
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								<label for="">
 									Color
 								</label>
@@ -143,7 +143,7 @@
 									<input type="text" class="form-control">
 								</div>
 							</div>
-							<div class="form-group col-md-4">
+							<div class="form-group col-md-6">
 								<label for="">
 									Quantity
 								</label>
@@ -168,7 +168,7 @@
 								<!-- Repeater Content -->
 								<div class="item-content student-repeater-content">
 									<div class="form-row">
-										<div class="form-group col-md-4">
+										<div class="form-group col-md-6">
 											<label for="">
 												Mens
 											</label>
@@ -187,7 +187,7 @@
 												<input type="text" class="form-control">
 											</div>
 										</div>
-										<div class="form-group col-md-4">
+										<div class="form-group col-md-6">
 											<label for="">
 												Womens
 											</label>
@@ -206,7 +206,9 @@
 												<input type="text" class="form-control">
 											</div>
 										</div>
-										<div class="form-group col-md-4">
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
 											<label for="">
 												Model Number
 											</label>
@@ -220,9 +222,7 @@
 												<i class="fas fa-chevron-down"></i>
 											</div>
 										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-group col-md-4">
+										<div class="form-group col-md-6">
 											<label for="">
 												Size
 											</label>
@@ -231,7 +231,9 @@
 												<input type="text" class="form-control">
 											</div>
 										</div>
-										<div class="form-group col-md-4">
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-6">
 											<label for="">
 												Color
 											</label>
@@ -244,7 +246,7 @@
 												<input type="text" class="form-control">
 											</div>
 										</div>
-										<div class="form-group col-md-4">
+										<div class="form-group col-md-6">
 											<label for="">
 												Quantity
 											</label>
