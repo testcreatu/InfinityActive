@@ -58,11 +58,12 @@ Route::group(['prefix'=>'admin'], function(){
 
 Route::post('save-product','backend\ProductController@save');
 
-Route::get('new-home', function () {
-    return view('home.home');
-});
+// Route::get('new-home', function () {
+//     return view('home.home');
+// });
 
 Route::get('home','HomeController@form');
+Route::get('/view-product','HomeController@viewProduct');
 
 Route::get('link', function () {
     return view('link.link');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\VendorProductDetail;
 use App\Branch;
 use App\ModelNumber;
+use App\Product;
+use App\CustomerDetail;
 
 class HomeController extends Controller
 {
@@ -14,10 +16,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -42,6 +44,15 @@ class HomeController extends Controller
         {
             $order_no= $order['order_no'] + 1;
         }
-        return view('home.home', compact('branch', 'model_number', 'order_no'));
+
+        return view('home.form', compact('branch', 'model_number', 'order_no'));
+    }
+
+
+    public function viewProduct()
+    {
+        $product = VendorProductDetail::join('products','vendor_product_details.id','products.vendor_product_detail_id')
+            ->select('vendor_product_details.order_no','vendor_product_details.branch','products.product_name','products.product_other_name','products.model_number','products.size','products.quantity','products.color')->get();
+        return view('home.view',compact('product'));
     }
 }
