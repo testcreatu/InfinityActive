@@ -34,8 +34,8 @@ class ProductController extends Controller
         {
             $product = new VendorProductDetail;
             $product->uuid = $this->generateUuid();
-            $product->vendor_id = Auth::guard('web')->user()->id;
-            // $product->vendor_id = 1;
+            // $product->vendor_id = Auth::guard('web')->user()->id;
+            $product->vendor_id = 1;
             $product->date = \Carbon\Carbon::now()->toDateString();
             $product->order_no = $order_no;
             $product->branch = $request['branch'];

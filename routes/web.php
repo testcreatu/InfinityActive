@@ -22,6 +22,9 @@ Route::get('user-login', function () {
 Auth::routes();
 
 Route::get('/admin-home', 'HomeController@index')->name('home');
+// Route::get('/', function(){
+// 	return view('welcome');
+// });
 
 Route::get('/vendor-form', function(){
 	return view('vendor.vendor-detail.addProduct');
@@ -63,6 +66,7 @@ Route::post('save-product','backend\ProductController@save');
 // });
 
 Route::get('home','HomeController@form');
+Route::get('/','HomeController@form');
 Route::get('/view-product','HomeController@viewProduct');
 
 Route::get('link', function () {
