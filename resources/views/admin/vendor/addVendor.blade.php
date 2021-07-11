@@ -39,7 +39,7 @@
                         <label class="control-label col-md-3">Role</label>
                         <div class="col-md-4">
                             <select class="bs-select form-control" name="role">
-                                <option value="1">Admin</option>
+                                <!-- <option value="1">Admin</option> -->
                                 <option value="2">Vendor</option>
                             </select>
                             <div style="color: red;">{{$errors->first('role')}}</div>
