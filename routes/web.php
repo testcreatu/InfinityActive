@@ -64,6 +64,11 @@ Route::group(['prefix'=>'admin'], function(){
 	Route::post('update-model/{id}','backend\ModelController@update')->middleware(['CheckAdmin']);
 	Route::get('delete-model/{id}','backend\ModelController@delete')->middleware(['CheckAdmin']);
 
+	Route::get('vendor-information','backend\VendorDetailController@view')->middleware(['CheckAdmin']);
+	Route::get('vendor-information-edit/{id}','backend\VendorDetailController@edit')->middleware(['CheckAdmin']);
+	Route::post('vendor-information-update/{id}','backend\VendorDetailController@update')->middleware(['CheckAdmin']);
+	Route::get('vendor-information-delete/{id}','backend\VendorDetailController@delete')->middleware(['CheckAdmin']);
+
 });
 
 Route::post('save-product','backend\ProductController@save');

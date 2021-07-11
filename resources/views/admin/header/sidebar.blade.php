@@ -29,6 +29,12 @@
                                 <span class="title">Vendor</span>
                             </a> 
                         </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/vendor-information')}}" class="nav-link">
+                                <i class="fa fa-user"></i>
+                                <span class="title">Vendor Information</span>
+                            </a> 
+                        </li>
                         <li class="heading">
                             <h3 class="uppercase">Branch Section</h3>
                         </li>

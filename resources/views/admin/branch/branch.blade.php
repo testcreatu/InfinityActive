@@ -33,10 +33,7 @@
                     <thead>
                         <tr>
                             <th>
-                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                    <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
-                                    <span></span>
-                                </label>
+                                SN
                             </th>
                             <th> Name </th>
                             <th> Actions </th>
@@ -46,10 +43,7 @@
                     	@foreach($branches as $branch)
                         <tr class="odd gradeX">
                             <td>
-                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                    <input type="checkbox" class="checkboxes" value="1" />
-                                    <span></span>
-                                </label>
+                                {{$loop->iteration}}
                             </td>
                             <td> {{$branch['branch_name']}} </td>
                             <td>
