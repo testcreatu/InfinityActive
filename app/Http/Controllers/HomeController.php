@@ -57,8 +57,8 @@ class HomeController extends Controller
         if(Auth::guard()->check())
         { 
             $product = VendorProductDetail::join('products','vendor_product_details.id','products.vendor_product_detail_id')
-                ->where('vendor_product_details.vendor_id' ,Auth::guard('web')->user()->role_id)
-                ->select('vendor_product_details.order_no','vendor_product_details.branch','products.product_name','products.product_other_name','products.model_number','products.size','products.quantity','products.color')->get();
+                ->where('vendor_product_details.vendor_id' ,Auth::guard('web')->user()->id)
+                ->select('vendor_product_details.order_no','vendor_product_details.branch','products.product_name','products.product_other_name','products.model_number','products.size','products.quantity','products.color','vendor_product_details.gender as gender')->get();
             return view('home.view',compact('product'));
         }
         else
