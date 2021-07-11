@@ -407,3 +407,25 @@ h5 {
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #c0392b !important;
 }
+
+.logo {
+    height: 60px;
+    width:60px;
+    overflow:hidden;
+}
+
+.logo img {
+    height:100%;
+    width:100%;
+    object-fit: contain;
+}
+
+header {
+    background: #f8f9fa!important
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3377c0;
+    border-color: #3377c0;
+}
