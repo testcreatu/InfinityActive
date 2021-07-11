@@ -49,7 +49,7 @@
 <body>
 
 <div>
-	<!-- @include('header.header') -->
+	@include('header.header')
 </div>
 
 <div style="min-height: 50vh">
