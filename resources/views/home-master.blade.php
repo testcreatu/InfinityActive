@@ -3,7 +3,7 @@
 <head>
 
     <!-- Page Title -->
-    <title>Page title</title>
+    <title>Infinity Active Wears</title>
 
 
     <!-- FavIcon Link -->

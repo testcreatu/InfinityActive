@@ -8,7 +8,7 @@ use App\User;
 use Session;
 
 
-class CheckAdmin
+class CheckVendor
 {
     /**
      * Handle an incoming request.
@@ -22,12 +22,14 @@ class CheckAdmin
     {
         if(Auth::guard()->check())
         {
+
+
             $user = User::where('id',Auth::guard('web')->user()->id)->get()->first();
-            if ($user['role_id'] != 1) {
+            if ($user['role_id'] != 2) {
                 Session::flush();
                 // return response()->json("You're not authorized");
                 // dd('here');
-                return redirect('admin/login');
+                return redirect('/');
                 // echo "You're not authorized";
             }
 
@@ -36,7 +38,7 @@ class CheckAdmin
         else
         {
             Session::flush();
-            return redirect('admin/login');
+            return redirect('/');
         }
     }
 }

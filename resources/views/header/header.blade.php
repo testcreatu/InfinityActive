@@ -17,7 +17,7 @@
                         <a class="nav-link" href="home">{{Auth::user()->email}}</a>
                     </li> 
                     <li class="nav-item active">
-                        <a class="nav-link" href="home">Logout</a>
+                        <a class="nav-link" href="{{url('vendor/logout')}}">Logout</a>
                     </li>
                     @endif
                 </ul>

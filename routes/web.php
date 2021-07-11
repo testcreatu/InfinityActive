@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,10 @@ Route::get('/admin-home', 'HomeController@index')->name('home');
 
 Route::get('/vendor-form', function(){
 	return view('vendor.vendor-detail.addProduct');
+});
+Route::get('vendor/logout', function(){
+	Session::flush();
+	return redirect('/');
 });
 
 Route::group(['prefix'=>'admin'], function(){
@@ -77,8 +82,8 @@ Route::post('save-product','backend\ProductController@save');
 //     return view('home.home');
 // });
 
-Route::get('home','HomeController@form');
-Route::get('/view-product','HomeController@viewProduct');
+Route::get('home','HomeController@form')->middleware(['CheckVendor']);
+Route::get('/view-product','HomeController@viewProduct')->middleware(['CheckVendor']);
 
 Route::get('link', function () {
     return view('link.link');
