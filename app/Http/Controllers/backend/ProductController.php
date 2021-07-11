@@ -34,8 +34,8 @@ class ProductController extends Controller
         {
             $product = new VendorProductDetail;
             $product->uuid = $this->generateUuid();
-            // $product->vendor_id = Auth::guard('web')->user()->id;
-            $product->vendor_id = 1;
+            $product->vendor_id = Auth::guard('web')->user()->id;
+            // $product->vendor_id = 1;
             $product->date = \Carbon\Carbon::now()->toDateString();
             $product->order_no = $order_no;
             $product->branch = $request['branch'];
@@ -58,7 +58,7 @@ class ProductController extends Controller
                     }
                     else
                     {
-                        $productDetail->product_name = $request['group-c'][$i]['product_name_w']; 
+                        $productDetail->product_name = $request['group-c'][0]['product_name_w']; 
                     }
                     
                 }
@@ -71,7 +71,7 @@ class ProductController extends Controller
                     }
                     else
                     {
-                        $productDetail->product_name = $request['group-c'][$i]['product_name_m'];
+                        $productDetail->product_name = $request['group-c'][0]['product_name_m'];
                     }
 
                 }

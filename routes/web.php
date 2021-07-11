@@ -14,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('user-login', function () {
+Route::get('vendor-login', function () {
     return view('login.login');
 });
+
+Route::post('vendor-login-submit','Vendor\LoginController@login');
+
+Route::get('/', function () {
+    return view('login.login');
+});
+
 
 
 Auth::routes();
@@ -43,19 +50,19 @@ Route::group(['prefix'=>'admin'], function(){
 	Route::post('update-vendor/{vendor_uuid}','backend\VendorController@update')->middleware(['CheckAdmin']);
 	Route::get('delete-vendor/{vendor_uuid}','backend\VendorController@delete')->middleware(['CheckAdmin']);
 
-	Route::get('add-branch','backend\BranchController@add');
-	Route::post('save-branch','backend\BranchController@save');
-	Route::get('branch','backend\BranchController@view');
-	Route::get('edit-branch/{id}','backend\BranchController@edit');
-	Route::post('update-branch/{id}','backend\BranchController@update');
-	Route::get('delete-branch/{id}','backend\BranchController@delete');
+	Route::get('add-branch','backend\BranchController@add')->middleware(['CheckAdmin']);
+	Route::post('save-branch','backend\BranchController@save')->middleware(['CheckAdmin']);
+	Route::get('branch','backend\BranchController@view')->middleware(['CheckAdmin']);
+	Route::get('edit-branch/{id}','backend\BranchController@edit')->middleware(['CheckAdmin']);
+	Route::post('update-branch/{id}','backend\BranchController@update')->middleware(['CheckAdmin']);
+	Route::get('delete-branch/{id}','backend\BranchController@delete')->middleware(['CheckAdmin']);
 
-	Route::get('add-model','backend\ModelController@add');
-	Route::post('save-model','backend\ModelController@save');
-	Route::get('model','backend\ModelController@view');
-	Route::get('edit-model/{id}','backend\ModelController@edit');
-	Route::post('update-model/{id}','backend\ModelController@update');
-	Route::get('delete-model/{id}','backend\ModelController@delete');
+	Route::get('add-model','backend\ModelController@add')->middleware(['CheckAdmin']);
+	Route::post('save-model','backend\ModelController@save')->middleware(['CheckAdmin']);
+	Route::get('model','backend\ModelController@view')->middleware(['CheckAdmin']);
+	Route::get('edit-model/{id}','backend\ModelController@edit')->middleware(['CheckAdmin']);
+	Route::post('update-model/{id}','backend\ModelController@update')->middleware(['CheckAdmin']);
+	Route::get('delete-model/{id}','backend\ModelController@delete')->middleware(['CheckAdmin']);
 
 });
 
@@ -66,7 +73,6 @@ Route::post('save-product','backend\ProductController@save');
 // });
 
 Route::get('home','HomeController@form');
-Route::get('/','HomeController@form');
 Route::get('/view-product','HomeController@viewProduct');
 
 Route::get('link', function () {

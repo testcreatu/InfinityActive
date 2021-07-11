@@ -8,6 +8,8 @@ use App\Branch;
 use App\ModelNumber;
 use App\Product;
 use App\CustomerDetail;
+use Session;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -16,10 +18,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
@@ -46,13 +48,23 @@ class HomeController extends Controller
         }
 
         return view('home.form', compact('branch', 'model_number', 'order_no'));
+        
     }
 
 
     public function viewProduct()
     {
-        $product = VendorProductDetail::join('products','vendor_product_details.id','products.vendor_product_detail_id')
-            ->select('vendor_product_details.order_no','vendor_product_details.branch','products.product_name','products.product_other_name','products.model_number','products.size','products.quantity','products.color')->get();
-        return view('home.view',compact('product'));
+        if(Auth::guard()->check())
+        { 
+            $product = VendorProductDetail::join('products','vendor_product_details.id','products.vendor_product_detail_id')
+                ->where('vendor_product_details.vendor_id' ,Auth::guard('web')->user()->role_id)
+                ->select('vendor_product_details.order_no','vendor_product_details.branch','products.product_name','products.product_other_name','products.model_number','products.size','products.quantity','products.color')->get();
+            return view('home.view',compact('product'));
+        }
+        else
+        {
+            Session::flush();
+            return redirect('/');
+        }
     }
 }

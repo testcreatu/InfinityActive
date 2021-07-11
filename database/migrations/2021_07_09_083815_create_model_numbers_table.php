@@ -17,6 +17,7 @@ class CreateModelNumbersTable extends Migration
             $table->id();
             $table->string('model_number');
             $table->string('model_number_slug');
+            $table->string('type');
             $table->timestamps();
         });
     }
